@@ -21,5 +21,6 @@ class Word
     else
       "These words don't have the same number of letters"
     end
+    
   end
 end
