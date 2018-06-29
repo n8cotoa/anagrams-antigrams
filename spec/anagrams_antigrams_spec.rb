@@ -9,7 +9,7 @@ describe('#anagrams_antigrams') do
   end
   it('program will check if the words are antigrams') do
     words = Word.new('hi', 'bye')
-    expect(words.anagram?()).to(eq(false))
+    expect(words.anagram?()).to(eq('This word is an antigram!'))
   end
   it('program will account for different letter casing') do
     words = Word.new('Tea', "Eat")
