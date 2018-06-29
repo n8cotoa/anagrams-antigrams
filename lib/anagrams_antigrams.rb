@@ -7,22 +7,18 @@ class Word
   def check_vowels()
     vowels = ['a', 'e', 'i', 'o', 'u']
     x = 0
-    until x >= 1
-      @word1.each do |letter|
-        vowels.each do |vowel|
-          if letter.include?(vowel)
-            x += 1
-          end
+    y = 0
+    @word1.each do |letter|
+      vowels.each do |vowel|
+        if letter.include?(vowel)
+          x += 1
         end
       end
     end
-    y = 0
-    until y >= 1
-      @word2.each do |letter|
-        vowels.each do |vowel|
-          if letter.include?(vowel)
-            y += 1
-          end
+    @word2.each do |letter|
+      vowels.each do |vowel|
+        if letter.include?(vowel)
+          y += 1
         end
       end
     end
