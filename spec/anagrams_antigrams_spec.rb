@@ -17,7 +17,7 @@ describe('#anagrams_antigrams') do
   end
   it('program will remove punctuation and special characters') do
     words = Word.new('Ru,by!', "Bu9ry.")
-    expect(words.anagram?()).to(eq(false))
+    expect(words.anagram?()).to(eq(true))
   end
 
 end
