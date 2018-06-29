@@ -8,15 +8,9 @@ class Word
     vowels = ['a', 'e', 'i', 'o', 'u']
     x = 0
     y = 0
-    @word1.each do |letter|
-      vowels.each { |vowel| (letter.include?(vowel) ? x += 1 : x += 0)}
-    end
-    @word2.each do |letter|
-      vowels.each { |vowel| (letter.include?(vowel) ? y += 1 : y += 0)}
-    end
-    if x >= 1 && y >= 1
-      true
-    end
+    @word1.each { |letter| vowels.each { |vowel| (letter.include?(vowel) ? x += 1 : x += 0)}}
+    @word2.each { |letter| vowels.each { |vowel| (letter.include?(vowel) ? y += 1 : y += 0)}}
+    x >= 1 && y >= 1 ? true : false
   end
 
   def anagram?()
@@ -28,7 +22,7 @@ class Word
       elsif @word1.length == @word2.length
         @word1.sort == @word2.sort ? true : false
       end
-    else 
+    else
       'This is not a word'
     end
   end

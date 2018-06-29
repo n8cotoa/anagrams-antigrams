@@ -35,5 +35,4 @@ describe('#anagrams_antigrams') do
     words = Word.new('jumpy brick', 'glent vozhd')
     expect(words.anagram?()).to(eq('Antigram'))
   end
-
 end
