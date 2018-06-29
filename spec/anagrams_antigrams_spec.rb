@@ -19,6 +19,10 @@ describe('#anagrams_antigrams') do
     words = Word.new('Teas', "Eat")
     expect(words.anagram?()).to(eq('These words don\'t have the same number of letters'))
   end
+  it('program will account for different word lengths') do
+    words = Word.new('testing', "thirsting")
+    expect(words.anagram?()).to(eq('These words don\'t have the same number of letters'))
+  end
   it('program will remove punctuation and special characters') do
     words = Word.new('Ru,by!', "Bu9ry.")
     expect(words.anagram?()).to(eq(true))
