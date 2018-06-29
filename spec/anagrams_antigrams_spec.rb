@@ -6,4 +6,8 @@ describe('#anagrams_antigrams') do
     words = Word.new('ruby', 'bury')
     expect(words.anagram?()).to(eq(true))
   end
+  it('program will account for different letter casing') do
+    words = Word.new('Tea', "Eat")
+    expect(words.anagram?()).to(eq(false))
+  end
 end
