@@ -4,16 +4,44 @@ class Word
     @word2 = word2.downcase.gsub(/[^a-z]/, '').chars
   end
 
+  def check_vowels()
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    x = 0
+    until x >= 1
+      @word1.each do |letter|
+        vowels.each do |vowel|
+          if letter.include?(vowel)
+            x += 1
+          end
+        end
+      end
+    end
+    y = 0
+    until y >= 1
+      @word2.each do |letter|
+        vowels.each do |vowel|
+          if letter.include?(vowel)
+            y += 1
+          end
+        end
+      end
+    end
+    if x >= 1 && y >= 1
+      true
+    else
+      false
+    end
+  end
+
   def anagram?()
     if @word1.length == @word2.length
       if @word1.sort == @word2.sort
         true
       else
-        false 
+        false
       end
     else
       "These words don't have the same number of letters"
     end
-
   end
 end

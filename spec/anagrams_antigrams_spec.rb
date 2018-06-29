@@ -19,5 +19,9 @@ describe('#anagrams_antigrams') do
     words = Word.new('Ru,by!', "Bu9ry.")
     expect(words.anagram?()).to(eq(true))
   end
+  it('program will check both words for vowels') do
+    words = Word.new('Ru,by!', "Bu9ry.")
+    expect(words.check_vowels()).to(eq(false))
+  end
 
 end
