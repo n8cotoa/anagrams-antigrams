@@ -33,14 +33,14 @@ class Word
     if check_vowels()
       if (@word1.any? {|letter| @word2.include?(letter)} == false)
         'Antigram'
-      elsif @word1.length != @word2.length
-        'These words don\'t have the same number of letters'
       elsif @word1.length == @word2.length
         if @word1.sort == @word2.sort
           true
         else
           false
         end
+      else
+        'These words don\'t have the same number of letters'
       end
     else
       'This is not a word'
