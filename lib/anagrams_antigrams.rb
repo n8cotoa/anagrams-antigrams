@@ -14,14 +14,14 @@ class Word
   end
 
   def anagram?()
-    intersection = (@word1 & @word2)
-    intersection_num = intersection.length
     if check_vowels()
       if (@word1.any? {|letter| @word2.include?(letter)} == false)
         'Antigram'
       elsif @word1.length != @word2.length
-        puts "These words share #{intersection_num} letters. They are #{intersection}."
-        'These words don\'t have the same number of letters'
+        intersection = (@word1 & @word2).flat_map { |n| [n]*[@word1.count(n), @word2.count(n)].min }
+        intersection_num = intersection.length
+        "These words share #{intersection_num} letters. They are #{intersection}."
+        false
       elsif @word1.length == @word2.length
         @word1.sort == @word2.sort ? true : false
       end
