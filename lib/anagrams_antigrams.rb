@@ -36,8 +36,10 @@ class Word
       else
         false
       end
-    else
-      "These words don't have the same number of letters"
+    elsif @word1.length != @word2.length && (@word1.any? {|letter| @word2.include?(letter)} == false)
+      'This word is an antigram!'
+    else @word1.length != @word2.length
+      'These words don\'t have the same number of letters'
     end
   end
 end
