@@ -9,7 +9,7 @@ describe('#anagrams_antigrams') do
   end
   it('program will check if the words are antigrams') do
     words = Word.new('hi', 'bye')
-    expect(words.anagram?()).to(eq('This word is an antigram!'))
+    expect(words.anagram?()).to(eq('Antigram'))
   end
   it('program will account for different letter casing') do
     words = Word.new('Tea', "Eat")
@@ -25,11 +25,15 @@ describe('#anagrams_antigrams') do
   end
   it('program will check both words for vowels') do
     words = Word.new('Ru,by!', "Bu9ry.")
-    expect(words.check_vowels()).to(eq(true))
+    expect(words.anagram?()).to(eq(true))
   end
   it('program will check if phrases are anagrams') do
     words = Word.new('O, DRACONIAN DEVIL', 'LEONARDO DA VINCI')
     expect(words.anagram?()).to(eq(true))
+  end
+  it('program will check if phrases are antigrams') do
+    words = Word.new('jumpy brick', 'glent vozhd')
+    expect(words.anagram?()).to(eq('Antigram'))
   end
 
 end

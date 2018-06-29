@@ -30,16 +30,20 @@ class Word
   end
 
   def anagram?()
-    if check_vowels() && @word1.length == @word2.length
-      if @word1.sort == @word2.sort
-        true
-      else
-        false
+    if check_vowels()
+      if (@word1.any? {|letter| @word2.include?(letter)} == false)
+        'Antigram'
+      elsif @word1.length != @word2.length
+        'These words don\'t have the same number of letters'
+      elsif @word1.length == @word2.length
+        if @word1.sort == @word2.sort
+          true
+        else
+          false
+        end
       end
-    elsif @word1.length != @word2.length && (@word1.any? {|letter| @word2.include?(letter)} == false)
-      'This word is an antigram!'
-    else @word1.length != @word2.length
-      'These words don\'t have the same number of letters'
+    else
+      'This is not a word'
     end
   end
 end
