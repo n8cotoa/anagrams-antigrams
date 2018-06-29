@@ -1,5 +1,6 @@
 require('rspec')
 require('anagrams_antigrams')
+require('pry')
 
 describe('#anagrams_antigrams') do
   it('program should return true is words are anagrams') do
@@ -14,4 +15,9 @@ describe('#anagrams_antigrams') do
     words = Word.new('Teas', "Eat")
     expect(words.anagram?()).to(eq('These words don\'t have the same number of letters'))
   end
+  it('program will remove punctuation and special characters') do
+    words = Word.new('Ru,by!', "Bu9ry.")
+    expect(words.anagram?()).to(eq(false))
+  end
+
 end
