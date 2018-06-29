@@ -9,23 +9,13 @@ class Word
     x = 0
     y = 0
     @word1.each do |letter|
-      vowels.each do |vowel|
-        if letter.include?(vowel)
-          x += 1
-        end
-      end
+      vowels.each { |vowel| (letter.include?(vowel) ? x += 1 : x += 0)}
     end
     @word2.each do |letter|
-      vowels.each do |vowel|
-        if letter.include?(vowel)
-          y += 1
-        end
-      end
+      vowels.each { |vowel| (letter.include?(vowel) ? y += 1 : y += 0)}
     end
     if x >= 1 && y >= 1
       true
-    else
-      false
     end
   end
 
@@ -36,13 +26,9 @@ class Word
       elsif @word1.length != @word2.length
         'These words don\'t have the same number of letters'
       elsif @word1.length == @word2.length
-        if @word1.sort == @word2.sort
-          true
-        else
-          false
-        end
+        @word1.sort == @word2.sort ? true : false
       end
-    else
+    else 
       'This is not a word'
     end
   end
