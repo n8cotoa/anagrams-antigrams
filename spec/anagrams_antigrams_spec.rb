@@ -25,7 +25,7 @@ describe('#anagrams_antigrams') do
   end
   it('program will check if phrases are anagrams') do
     words = Word.new('O, DRACONIAN DEVIL', 'LEONARDO DA VINCI')
-    expect(words.anagram?()).to(eq(false))
+    expect(words.anagram?()).to(eq(true))
   end
 
 end
