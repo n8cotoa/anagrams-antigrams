@@ -23,5 +23,9 @@ describe('#anagrams_antigrams') do
     words = Word.new('Ru,by!', "Bu9ry.")
     expect(words.check_vowels()).to(eq(true))
   end
+  it('program will check if phrases are anagrams') do
+    words = Word.new('O, DRACONIAN DEVIL', 'LEONARDO DA VINCI')
+    expect(words.anagram?()).to(eq(false))
+  end
 
 end

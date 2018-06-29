@@ -30,7 +30,7 @@ class Word
   end
 
   def anagram?()
-    if @word1.length == @word2.length
+    if check_vowels() && @word1.length == @word2.length
       if @word1.sort == @word2.sort
         true
       else
