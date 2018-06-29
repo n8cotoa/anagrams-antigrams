@@ -10,4 +10,8 @@ describe('#anagrams_antigrams') do
     words = Word.new('Tea', "Eat")
     expect(words.anagram?()).to(eq(true))
   end
+  it('program will account for different word lengths') do
+    words = Word.new('Teas', "Eat")
+    expect(words.anagram?()).to(eq('These words don\'t have the same number of letters'))
+  end
 end

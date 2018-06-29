@@ -5,17 +5,21 @@ class Word
   end
 
   def anagram?()
-    x = 0
-    word1_split = @word1.split('')
-    word1_split.each do |letter1|
-      if @word2.include?(letter1)
-        x += 1
+    if @word1.length == @word2.length
+      x = 0
+      word1_split = @word1.split('')
+      word1_split.each do |letter1|
+        if @word2.include?(letter1)
+          x += 1
+        end
       end
-    end
-    if x == word1_split.length
-      true
+      if x == word1_split.length
+        true
+      else
+        false
+      end
     else
-      false
+      "These words don't have the same number of letters"
     end
   end
 end
