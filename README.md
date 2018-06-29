@@ -22,15 +22,19 @@ A program that will let the user know if a word is anagram or an antigram.
 ## Specs/Steps
 
 * Program will check if words are anagrams
-  * Input: ruby, bury
+  * Input: 'ruby', 'bury'
   * Output: true
 
+* Program will check if words are antigrams
+  * Input: 'hi', 'bye'
+  * Output: 'is Antigram'
+
 * Program will account for different letter casing
-  * Input: Tea, Eat
+  * Input: 'Tea', 'Eat'
   * Output: tea, eat
 
 * Program will account for different word lengths
-  * Input: Teas, eat
+  * Input: 'Teas', 'eat'
   * Output: 'These words are different lengths'
 
 * Program will remove punctuation and other special characters
@@ -44,6 +48,10 @@ A program that will let the user know if a word is anagram or an antigram.
 * Program will check if phrases are anagrams
   * Input: 'O, DRACONIAN DEVIL', 'LEONARDO DA VINCI'
   * Output: True
+
+* Program will check if phrases are Antigrams
+  * Input: 'jumpy brick', 'glent vozhd'
+  * Output: 'is Antigram'
 
 ## License
 
